@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multi-Step Form with Progress Indicator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Multi-Step Form</h2>
+    
+    <div id="progress-bar">
+      <div class="progress" id="progress"></div>
+      <div class="progress-step progress-step-active" data-title="Step 1"></div>
+      <div class="progress-step" data-title="Step 2"></div>
+      <div class="progress-step" data-title="Step 3"></div>
+      <div class="progress-step" data-title="Summary"></div>
+    </div>
+    
+    <form id="multiStepForm">
+      <!-- Step 1 -->
+      <div class="form-step form-step-active">
+        <label for="firstName">First Name <span>*</span></label>  
+        <input type="text" id="firstName" name="firstName" required />
+        
+        <label for="lastName">Last Name <span>*</span></label>
+        <input type="text" id="lastName" name="lastName" required />
+        
+        <div class="buttons">
+          <button type="button" id="nextBtn1" class="btn">Next</button>
+        </div>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="form-step">
+        <label for="email">Email <span>*</span></label>
+        <input type="email" id="email" name="email" required />
+        
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" />
+        
+        <div class="buttons">
+          <button type="button" id="prevBtn2" class="btn btn-secondary">Previous</button>
+          <button type="button" id="nextBtn2" class="btn">Next</button>
+        </div>
+      </div>
+      
+      <!-- Step 3 -->
+      <div class="form-step">
+        <label for="username">Username <span>*</span></label>
+        <input type="text" id="username" name="username" required />
+        
+        <label for="password">Password <span>*</span></label>
+        <input type="password" id="password" name="password" required minlength="6" />
+        
+        <div class="buttons">
+          <button type="button" id="prevBtn3" class="btn btn-secondary">Previous</button>
+          <button type="button" id="nextBtn3" class="btn">Next</button>
+        </div>
+      </div>
+      
+      <!-- Summary -->
+      <div class="form-step">
+        <h3>Summary</h3>
+        <div id="summary"></div>
+        <div class="buttons">
+          <button type="button" id="prevBtnSummary" class="btn btn-secondary">Previous</button>
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
